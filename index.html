@@ -9,7 +9,7 @@
  <!------------- CSS Stylesheets Link Here ------------>
  <link rel="stylesheet" href="style.css">
 
- <!---------------- Tailwind CDN Link Here ---------->
+ <!--------- Tailwind CDN Link Here ---------->
  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -29,7 +29,9 @@
                         <h4 class="text-2xl font-bold text-center">Income</h4>
                     </div>
 
-                    <!-------- Input Form Started Here ------->
+                    <!-----------------------------
+                         Input Form Started Here 
+                         ---------------------------->
                     <form class="w-full max-w-sm">
                         <!-- Input-1(Income)  -->
                         <div class="md:flex md:items-center mb-6 mt-6">
@@ -39,11 +41,13 @@
                                 </label>
                           </div>
                           <div class="md:w-2/3">
-                             <input id="income-input" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your income">
+                             <input id="income-input" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="number" placeholder="Enter your income">
                           </div>
                         </div>
 
-                        <!-------- Expenses Form Started Here ------->
+                        <!------------------------------------
+                             Expenses Form Started Here 
+                             ------------------------------------>
 
                         <!-------- Expen Title Here----->
                         <div class="income-title">
@@ -58,7 +62,7 @@
                                 </label>
                             </div>
                             <div class="md:w-2/3">
-                                <input id="food-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your food cost">
+                                <input id="food-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="number" placeholder="Enter your food cost">
                             </div>
                           </div>
 
@@ -70,7 +74,7 @@
                                 </label>
                             </div>
                             <div class="md:w-2/3">
-                               <input id="rent-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your rent cost">
+                               <input id="rent-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="number" placeholder="Enter your rent cost">
                             </div>
                           </div>
 
@@ -82,9 +86,11 @@
                                 </label>
                             </div>
                             <div class="md:w-2/3">
-                                <input id="clothes-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your clothes cost">
+                                <input id="clothes-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="number" placeholder="Enter your clothes cost">
                             </div>
                           </div>
+                          <!-- error msg -->
+                          <h4 class="error" id="expenses-error">not enough balance to Expenses</h4>
                           <!---------- Calculate Button  ---------->
                           <div class="md:flex md:items-center">
                             <div class="md:w-1/3"></div>
@@ -94,12 +100,15 @@
                               </button>
                       </form>
 
-                      <!---------- After the Calculate to Expenses Amount --------------->
+                      <!---------------------------------------------- 
+                        After the Calculate to Expenses Amount 
+                        ----------------------------------------------->
                             <div class="w-full max-w-sm mx-auto mt-8">
                                 <div class="text-2xl font-bold md:flex md:items-center mx-auto mt-8">
                                 <h4>Total Expenses:<span id="total-expenses">00</span></h4>
                                </div>
-                           <!---------- After the Calculate to Balance Amount -------------->
+                           <!-------------------------------------------
+                            After the Calculate to Balance Amount ----------------------------------------------->
                                <div class="text-2xl font-bold md:flex md:items-center mt-8">
                                     <h4>Balance:<span id="balance-exist">00</span></h4>
                                </div>
@@ -107,19 +116,22 @@
                 </div>        
                 </div>
 
+                <!-- error msg -->
+                <h4 class="error" id="percentage-error">not enough balance to save</h4>
+
                 <!------------- Input Savings  --------------->
                 <div class="w-full max-w-sm mt-6">
                     <div class="md:flex items-center w-full max-w-sm mx-auto">
                         <div class="md:w-sm mx-auto">
-                            <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                            <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="save-percentage">
                               Save:
                             </label>
                           </div>
                           <div class="w-full md:w-sm mx-auto">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text">
+                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="save-percentage" type="number">
                           </div>
 
-                        <div class="w-full md:w-2/4">
+                        <div class="w-full md-w-sm md:w-2/4 px-4">
                             <h4>%</h4>
                         </div>
 
@@ -140,9 +152,12 @@
                 <div class="container md:flex md:items-center">
                     <div class="w-full max-w-sm mx-auto mt-8">
                         <div class="text-2xl font-bold md:flex md:items-center mx-auto mt-8">
-                            <h4>Saving Amount:<span id="save-money">00</span></h4>
+                            <h4>Saving Amount:<span id="save-money">00</span>
+                            </h4>
                        </div>
-                   <!--------After the Calculation to Remaining Balance ---------->
+                   <!---------------------------------------------------
+                    After the Calculation to Remaining Balance 
+                    ---------------------------------------------------->
                        <div class="text-2xl font-bold md:flex md:items-center mt-8">
                             <h4>Balance:<span id="remaining-balance">00</span></h4>
                        </div>
@@ -150,7 +165,6 @@
                 </div>
             </div>
         </div>
-        
         
     <!---------------- JavaScript Link Here  -------------->
     <script src="js/script.js"></script>

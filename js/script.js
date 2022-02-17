@@ -1,9 +1,10 @@
 // Field Input Started Here 
 const incomeInput = document.getElementById('income-input');
-const foodCostInput = document.getElementById('food-cost');
-const rentCostInput = document.getElementById('rent-cost');
-const clotheCostInput = document.getElementById('clothes-cost');
-const savePercentage = document.getElementById('save-money');
+const foodExpenses = document.getElementById('food-cost');
+const rentExpenses = document.getElementById('rent-cost');
+const clothesExpenses = document.getElementById('clothes-cost');
+const savePercentage = document.getElementById('save-percentage');
+
 
 // Field OutPut Started Here 
 const totalExpenses = document.getElementById('total-expenses');
@@ -18,10 +19,58 @@ function addition (food, rent, clothes){
 
 // Subtraction Function 
 function subtraction (incomeAndBalance, expensesAndSaving){
-    return Number (incomeAndBalance) - Number (expensesAndSaving);
+    return Number(incomeAndBalance) - Number(expensesAndSaving);
 }
 
-// Parcentage Function 
-function parcentage (incomeValue, savingValue){
- return Number (incomeValue) * (Number (savingValue) / 100);
+// Percentage Function 
+function percentage(incomeValue, savingValue) {
+ return Number(incomeValue) * (Number(savingValue) / 100);
 }
+
+
+// Income and Expenses Calculator 
+function Calculator() {
+    const showError = document.getElementById('percentage-error');
+    showError.classList.remove("error-show");
+    
+    let expenses = addition(foodExpenses.value, rentExpenses.value, clothesExpenses.value);
+    if (expenses < incomeInput.value) {
+        const showError = document.getElementById('expenses-error');
+        showError.classList.remove("error-show");
+        totalExpenses.innerText = expenses;
+        totalBalance.innerText = subtraction(incomeInput.value, expenses);
+    } else {
+        const showError = document.getElementById('expenses-error');
+        showError.classList.add("error-show");
+    }
+    
+};
+
+
+// Income and Expenses aslo Saving Money Calculator
+function Savingcalc() {
+    
+    const showError = document.getElementById('expenses-error');
+    showError.classList.remove("error-show");
+
+    // Income and Expenses Calculator 
+    let expenses = addition(foodExpenses.value, rentExpenses.value, clothesExpenses.value);
+    totalExpenses.innerText = expenses;
+    let balance = subtraction(incomeInput.value, expenses);
+    totalBalance.innerText = balance;
+
+    // Saving Balance 
+    let saving = percentage(incomeInput.value, savePercentage.value);
+    if (saving < balance) {
+        const showError = document.getElementById('percentage-error');
+        showError.classList.remove("error-show");
+        savingAmount.innerText = saving;
+        remainAmount.innerText = subtraction(balance, saving);
+    } else {
+        const showError = document.getElementById('percentage-error');
+        showError.classList.add("error-show");
+    }
+    
+}
+
+// End of JavaScript Code 
