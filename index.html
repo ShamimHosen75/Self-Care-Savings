@@ -15,7 +15,7 @@
 <body>
         <!----------- Heading Started Here  --------->
         <div class="text-5xl text-center mt-14"> 
-            <h1 class="text-sky-600 text-semi-bold">Self-Care <span class="font-bold text-rose-600">Savings</span></h1>
+            <h1 class="text-sky-600 font-semi-bold">Self-Care <span class="font-bold text-rose-600"> Savings</span></h1>
         </div>
         <div class="container md:flex md:items-center">
                 <div class="side-img bg-contain mt-12">
@@ -34,12 +34,12 @@
                         <!-- Input-1(Income)  -->
                         <div class="md:flex md:items-center mb-6 mt-6">
                           <div class="md:w-1/3">
-                            <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                              Income :
-                            </label>
+                                <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                Income :
+                                </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your income">
+                             <input id="income-input" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your income">
                           </div>
                         </div>
 
@@ -50,55 +50,108 @@
                             <h4 class="text-2xl font-bold text-center">Expenses</h4>
                         </div>
 
-                            <!-- Input-2(Food)  -->
+                            <!----- Input-2(Food) ----->
                         <div class="md:flex md:items-center mb-6 mt-6">
                             <div class="md:w-1/3">
-                              <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Food :
-                              </label>
+                                <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Food :
+                                </label>
                             </div>
                             <div class="md:w-2/3">
-                              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your food cost">
+                                <input id="food-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your food cost">
                             </div>
                           </div>
 
-                          <!-- Input-3(Rent)  -->
+                          <!----- Input-3(Rent) ----->
                         <div class="md:flex md:items-center mb-6 mt-6">
                             <div class="md:w-1/3">
-                              <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Rent :
-                              </label>
+                                <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Rent :
+                                </label>
                             </div>
                             <div class="md:w-2/3">
-                              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your rent cost">
+                               <input id="rent-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your rent cost">
                             </div>
                           </div>
 
-                          <!-- Input-4(Clothes)  -->
+                          <!---- Input-4(Clothes)  ---->
                         <div class="md:flex md:items-center mb-6 mt-6">
                             <div class="md:w-1/3">
-                              <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Clothes :
-                              </label>
+                                <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                    Clothes :
+                                </label>
                             </div>
                             <div class="md:w-2/3">
-                              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your clothes cost">
+                                <input id="clothes-cost" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text" placeholder="Enter your clothes cost">
                             </div>
                           </div>
-                          <!-- Calculate Button  -->
+                          <!---------- Calculate Button  ---------->
                           <div class="md:flex md:items-center">
                             <div class="md:w-1/3"></div>
                             <div class="md:w-2/3">
-                              <button class="shadow bg-sky-600 hover:bg-rose-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                                <button id="calc-button" class="shadow bg-sky-600 hover:bg-rose-600 focus:shadow-outline focus:outline-none text-white text-lg font-bold py-3 px-6 rounded" type="button" onclick="Calculator()">
                                 Calculate
                               </button>
                       </form>
+
+                      <!---------- After the Calculate to Expenses Amount --------------->
+                            <div class="w-full max-w-sm mx-auto mt-8">
+                                <div class="text-2xl font-bold md:flex md:items-center mx-auto mt-8">
+                                <h4>Total Expenses:<span id="total-expenses">00</span></h4>
+                               </div>
+                           <!---------- After the Calculate to Balance Amount -------------->
+                               <div class="text-2xl font-bold md:flex md:items-center mt-8">
+                                    <h4>Balance:<span id="balance-exist">00</span></h4>
+                               </div>
+                            </div>
+                </div>        
                 </div>
 
-                </div>
+                <!------------- Input Savings  --------------->
+                <div class="w-full max-w-sm mt-6">
+                    <div class="md:flex items-center w-full max-w-sm mx-auto">
+                        <div class="md:w-sm mx-auto">
+                            <label class="block text-xl text-black font-semi-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                              Save:
+                            </label>
+                          </div>
+                          <div class="w-full md:w-sm mx-auto">
+                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-600" id="inline-full-name" type="text">
+                          </div>
 
+                        <div class="w-full md:w-2/4">
+                            <h4>%</h4>
+                        </div>
+
+                        <div class="md:flex md:w-full">
+                            <div class="md:w-1/3"></div>
+                            <div class="md:w-2/3">
+                                <button id="saving-calc" class="shadow bg-sky-600 hover:bg-rose-600 focus:shadow-outline focus:outline-none text-white text-lg font-bold py-3 px-6 rounded" type="button"
+                                onclick="Savingcalc()">
+                                Save
+                              </button>
+                    </div>
+                </div>
         </div>
 
+        <!------- After the Calculation to Savings Amount --------->
+        <div class="container md:flex md:items-center">
+            <div class="w-full max-w-sm mx-auto mt-8">
+                <div class="container md:flex md:items-center">
+                    <div class="w-full max-w-sm mx-auto mt-8">
+                        <div class="text-2xl font-bold md:flex md:items-center mx-auto mt-8">
+                            <h4>Saving Amount:<span id="save-money">00</span></h4>
+                       </div>
+                   <!--------After the Calculation to Remaining Balance ---------->
+                       <div class="text-2xl font-bold md:flex md:items-center mt-8">
+                            <h4>Balance:<span id="remaining-balance">00</span></h4>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
     <!---------------- JavaScript Link Here  -------------->
     <script src="js/script.js"></script>
 </body>
