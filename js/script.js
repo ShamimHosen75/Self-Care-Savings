@@ -25,33 +25,3 @@ function subtraction (incomeAndBalance, expensesAndSaving){
 function parcentage (incomeValue, savingValue){
  return Number (incomeValue) * (Number (savingValue) / 100);
 }
-
-// Income and Expenses Calculator 
-function Calculator () {
-    totalExpenses.innerText = addition(foodExpenses.value, rentExpenses.value, clothesExpenses.value);
-    totalBalance.innerText = subtraction(incomeIncome.value, totalExpenses.value);
-
-// Income and Expenses After the Calculation 
-incomeInput.value =" ";
-foodExpenses.value =" ";
-rentExpenses.value =" ";
-clothesExpenses.value =" ";
-};
-
-// Income and Expenses aslo Saving Money Calculator
-function  Savingcalculator (){
-    // Income and Expenses Calculator 
-    totalExpenses.innerText = addition(foodExpenses.value, rentExpenses.value, clothesExpenses);
-    totalBalance.innerText = subtraction (incomeIncome.value, totalExpenses.innerText);
-    // Saving Balance 
-    savingAmount.innerText = parcentage(incomeIncome.value, savePercentage.value);
-    remainAmount.innerText = subtraction(totalBalance.innerText, savingAmount.innerText);
-    // Income And Expenses After Calculation 
-    incomeIncome.value =" ";
-    foodExpenses.value =" ";
-    rentExpenses.value =" ";
-    clothesExpenses.value =" ";
-    // Saving After Calculation 
-    incomeIncome.value =" ";
-    savePercentage.value =" ";
-}
